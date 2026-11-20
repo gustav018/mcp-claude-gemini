@@ -260,12 +260,21 @@ export class GestorSesiones {
       for (const arch of archivos) {
         if (!arch.endsWith('.json')) continue;
         try {
-          const sesion = JSON.parse(fs.readFileSync(path.join(dirActivas, arch), 'utf8'));
+          const rutaArch = path.join(dirActivas, arch);
+          const sesion = JSON.parse(fs.readFileSync(rutaArch, 'utf8'));
+          const estaViva = !this.estaVencida(sesion);
+          
+          // Limpiar sesiones inactivas que ya superaron el TTL para evitar acumulación de ruido
+          if (!estaViva && sesion.sesion_id !== this.sesionId) {
+            try { fs.unlinkSync(rutaArch); } catch (_) {}
+            continue;
+          }
+
           const esPrimariaActual = resultado.roles[sesion.rol]?.primaria?.sesion_id === sesion.sesion_id;
           if (!esPrimariaActual && resultado.roles[sesion.rol]) {
             resultado.roles[sesion.rol].secundarias.push({
               ...sesion,
-              esta_viva: !this.estaVencida(sesion)
+              esta_viva: estaViva
             });
           }
         } catch (_) {}
