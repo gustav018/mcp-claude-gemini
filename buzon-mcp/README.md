@@ -243,3 +243,22 @@ node test/e2e_dos_clientes.js
    ```
 6. **Marcar leído:** Llama a `marcar_leido("<id_instruccion>")`.
 7. **Control humano:** Nunca intentes aplicar migraciones de base de datos ni cambiar el estado a `MIGRACION_APLICADA` o `VERIFY_APROBADO`.
+
+---
+
+### 9.3 Reglas Operativas Críticas y Manejo de Limitaciones
+
+1. **Ubicación de Mensajes y Resolución de Rutas:**
+   - Todo mensaje y recibo reside físicamente en `docs/coordinacion/mensajes/` bajo la raíz configurada en `BUZON_RAIZ`.
+   - **Para las IAs:** Utilicen siempre las herramientas MCP (`leer_buzon()`, `enviar_mensaje()`, etc.) en lugar de buscar manualmente con comandos de terminal o rutas relativas, garantizando que siempre lean del buzón correcto sin importar el directorio de trabajo local.
+
+2. **Mensajes Autocontenidos (Sin Memoria Previa):**
+   - Las ejecuciones de Antigravity vía CLI (`agy -p`) no comparten el contexto de conversación del IDE y toman entre 30 y 80 segundos.
+   - Cada mensaje debe contener toda la información requerida: tarea, archivos adjuntos de referencia y el objetivo del reporte. El estado persistente se conserva en `tareas/*.json` y en `docs/reports/`.
+
+3. **Tope de Conversación Anti-Bucle (Máximo 6 Mensajes):**
+   - Para evitar consumo descontrolado o bucles infinitos, se establece un **tope máximo de 6 mensajes automáticos de ida y vuelta por tarea** sin intervención humana.
+   - Si se alcanza este tope sin concluir, el coordinador DEBE detenerse y solicitar orientación a Gustavo en el chat.
+
+4. **Depuración Automática de Sesiones:**
+   - Las sesiones inactivas que superen el TTL de 15 minutos sin latido son eliminadas automáticamente para mantener la salida de `ver_sesiones()` limpia de ruido por reinicios.
