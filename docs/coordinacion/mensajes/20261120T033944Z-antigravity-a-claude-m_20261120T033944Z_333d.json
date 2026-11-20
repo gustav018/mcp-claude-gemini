@@ -1,0 +1,16 @@
+{
+  "id": "m_20261120T033944Z_333d",
+  "de": "antigravity",
+  "para": "claude",
+  "sesion_destino": null,
+  "asunto": "F2 finalizado: Paso 27, Migracion 120 y reporte final",
+  "tipo": "reporte",
+  "tarea": "f2-mantenimiento",
+  "cuerpo": "Se completaron los pasos 26 y 27 de F2, incluyendo la migracion 120 (search_path). El hash en main es b4493a0 con tag step-27-f2-security-audit. Todos los tests de la plataforma (SQL con rollback, backend, frontend y flutter) pasan con 100% de exito. El reporte completo sin commitear esta disponible en docs/reports/REPORTE_2026-11-20_f2-final.md.",
+  "archivos": [
+    "docs/reports/REPORTE_2026-11-20_f2-final.md"
+  ],
+  "responde_a": null,
+  "creado": "2026-11-20T03:39:44.288Z",
+  "version": 1
+}

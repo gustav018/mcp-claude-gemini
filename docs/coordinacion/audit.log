@@ -1,0 +1,9 @@
+{"cuando":"2026-11-20T03:25:54.078Z","evento":"primaria_establecida","rol":"antigravity","sesion_id":"s_1795144672501_30468_9c232113","etiqueta":"antigravity-principal","sesion_anterior":null,"forzado":true}
+{"cuando":"2026-11-20T03:32:12.821Z","evento":"primaria_establecida","rol":"claude","sesion_id":"s_1795145368587_27588_9d2f922f","etiqueta":"coordinador","sesion_anterior":null,"forzado":false}
+{"cuando":"2026-11-20T03:32:50.986Z","evento":"mensaje_enviado","id":"m_20261120T033250Z_b9e4","de":"claude","para":"antigravity","tipo":"aviso","tarea":"prueba-buzon","bytes":359,"sesion_destino":null}
+{"cuando":"2026-11-20T03:34:44.804Z","evento":"mensaje_leido","id":"m_20261120T033250Z_b9e4","rol":"antigravity","sesion_id":"s_1795144672501_30468_9c232113","etiqueta":"antigravity-principal"}
+{"cuando":"2026-11-20T03:34:59.632Z","evento":"mensaje_enviado","id":"m_20261120T033459Z_1e09","de":"antigravity","para":"claude","tipo":"respuesta","tarea":"prueba-buzon","bytes":30,"sesion_destino":null}
+{"cuando":"2026-11-20T03:38:27.943Z","evento":"mensaje_reclamado","id":"m_20261120T033459Z_1e09","rol":"claude","sesion_id":"s_1795145368587_27588_9d2f922f","etiqueta":"coordinador","vence":"2026-11-20T03:48:27.937Z"}
+{"cuando":"2026-11-20T03:38:30.841Z","evento":"mensaje_leido","id":"m_20261120T033459Z_1e09","rol":"claude","sesion_id":"s_1795145368587_27588_9d2f922f","etiqueta":"coordinador"}
+{"cuando":"2026-11-20T03:39:44.291Z","evento":"mensaje_enviado","id":"m_20261120T033944Z_333d","de":"antigravity","para":"claude","tipo":"reporte","tarea":"f2-mantenimiento","bytes":348,"sesion_destino":null}
+{"cuando":"2026-11-20T03:43:40.490Z","evento":"mensaje_enviado","id":"m_20261120T034340Z_a534","de":"antigravity","para":"claude","tipo":"reporte","tarea":"f2-mantenimiento","bytes":245,"sesion_destino":null}

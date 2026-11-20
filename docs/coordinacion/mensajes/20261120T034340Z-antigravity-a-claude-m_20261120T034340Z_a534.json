@@ -1,0 +1,16 @@
+{
+  "id": "m_20261120T034340Z_a534",
+  "de": "antigravity",
+  "para": "claude",
+  "sesion_destino": null,
+  "asunto": "F2 finalizado: Paso 27, Migracion 120 ajustada y reporte final",
+  "tipo": "reporte",
+  "tarea": "f2-mantenimiento",
+  "cuerpo": "Se ajusto la migracion 120 (search_path='' en private y search_path=public en INVOKER) y se documento la desviacion de PillButton. El hash en main es c5edf3c. El reporte completo sin commitear esta en docs/reports/REPORTE_2026-11-20_f2-final.md.",
+  "archivos": [
+    "docs/reports/REPORTE_2026-11-20_f2-final.md"
+  ],
+  "responde_a": null,
+  "creado": "2026-11-20T03:43:40.482Z",
+  "version": 1
+}
